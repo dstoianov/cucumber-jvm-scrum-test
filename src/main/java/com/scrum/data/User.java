@@ -9,8 +9,8 @@ package com.scrum.data;
  */
 public class User {
 
-  public String userName;
-  public String password;
-  public String email;
+    public String userName;
+    public String password;
+    public String email;
 
 }

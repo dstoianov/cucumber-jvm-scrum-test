@@ -8,7 +8,7 @@ Feature: Login negative cases functionality
 
   Examples:
     | username | password |
-    |   test   |   test   |
-    |   best   |   best   |
-    |   auto   |   auto   |
+    | test     | test     |
+    | best     | best     |
+    | auto     | auto     |
 

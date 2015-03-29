@@ -17,23 +17,23 @@ public class UsersManagementBehavior extends BaseBehavior {
     private User user;
     private AdminAssert adminAssert = new AdminAssert();
 
-  @Given("^Administrator want to add new user$")
-  public void administratorWantToAddNewUser() {
-    adminPerson.login();
-    adminPerson.atAddUser().openAddUserPage();
-  }
-
-  @When("^Administrator add user with data$")
-  public void administratorAddUserWithData(List<User> listUsers) {
-    for (User userToAdd : listUsers) {
-      userToAdd.userName = userToAdd.userName + new Random().nextInt();
-      adminPerson.atAddUser().submitUser(userToAdd);
-      user = userToAdd;
+    @Given("^Administrator want to add new user$")
+    public void administratorWantToAddNewUser() {
+        adminPerson.login();
+        adminPerson.atAddUser().openAddUserPage();
     }
-  }
 
-  @Then("^Administrator should see edit page for created user$")
-  public void administratorShouldSeeEditPageForCreatedUser() {
-      adminAssert.checkThatEditUserPageOpened(user);
-  }
+    @When("^Administrator add user with data$")
+    public void administratorAddUserWithData(List<User> listUsers) {
+        for (User userToAdd : listUsers) {
+            userToAdd.userName = userToAdd.userName + new Random().nextInt();
+            adminPerson.atAddUser().submitUser(userToAdd);
+            user = userToAdd;
+        }
+    }
+
+    @Then("^Administrator should see edit page for created user$")
+    public void administratorShouldSeeEditPageForCreatedUser() {
+        adminAssert.checkThatEditUserPageOpened(user);
+    }
 }

@@ -9,26 +9,26 @@ import com.scrum.pages.LoginPage;
  */
 public class AdminPerson {
 
-  private LoginPage loginPage = new LoginPage();
+    private LoginPage loginPage = new LoginPage();
 
-  public LoginPage atLoginPage() {
-    if (loginPage == null) {
-     loginPage = new LoginPage();
+    public LoginPage atLoginPage() {
+        if (loginPage == null) {
+            loginPage = new LoginPage();
+        }
+        return loginPage;
     }
-    return loginPage;
-  }
 
-  public HomePage atHomePage() {
-    return new HomePage();
-  }
+    public HomePage atHomePage() {
+        return new HomePage();
+    }
 
-  public void login() {
-    atLoginPage().open();
-    atLoginPage().fillForm("admin", "admin");
-    atLoginPage().clickSignInButton();
-  }
+    public void login() {
+        atLoginPage().open();
+        atLoginPage().fillForm("admin", "admin");
+        atLoginPage().clickSignInButton();
+    }
 
-  public AddUserPage atAddUser() {
-    return new AddUserPage();
-  }
+    public AddUserPage atAddUser() {
+        return new AddUserPage();
+    }
 }

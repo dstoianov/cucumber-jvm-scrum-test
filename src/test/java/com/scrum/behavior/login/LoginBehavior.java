@@ -12,25 +12,24 @@ public class LoginBehavior extends BaseBehavior {
 
     private LoginAssert loginAssert = new LoginAssert();
 
-  @Given("^Administrator wants to login$")
-  public void administratorWantsToLogin() {
-    adminPerson.atLoginPage().open();
-  }
+    @Given("^Administrator wants to login$")
+    public void administratorWantsToLogin() {
+        adminPerson.atLoginPage().open();
+    }
 
-  @When("^Administrator login to the system with username (.*) and password (.*)$")
-  public void administratorLoginToTheSystemWithUsernameAndPassword(String username,
-                                                                   String password) {
-    adminPerson.atLoginPage().fillForm(username, password);
-    adminPerson.atLoginPage().clickSignInButton();
-  }
+    @When("^Administrator login to the system with username (.*) and password (.*)$")
+    public void administratorLoginToTheSystemWithUsernameAndPassword(String username, String password) {
+        adminPerson.atLoginPage().fillForm(username, password);
+        adminPerson.atLoginPage().clickSignInButton();
+    }
 
-  @Then("^Administrator should see home page$")
-  public void administratorShouldSeeHomePage() {
-      loginAssert.checkThatHomePageOpened();
-  }
+    @Then("^Administrator should see home page$")
+    public void administratorShouldSeeHomePage() {
+        loginAssert.checkThatHomePageOpened();
+    }
 
-  @Then("^Administrator should see login page$")
-  public void administratorShouldSeeLoginPage() {
-      loginAssert.checkThatPageOpened();
-  }
+    @Then("^Administrator should see login page$")
+    public void administratorShouldSeeLoginPage() {
+        loginAssert.checkThatPageOpened();
+    }
 }

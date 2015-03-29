@@ -9,7 +9,7 @@ import org.openqa.selenium.WebDriver;
  */
 public class BasePage {
 
-  public WebDriver getDriver() {
-    return WebDriverSingleton.getInstance();
-  }
+    public WebDriver getDriver() {
+        return WebDriverSingleton.getInstance();
+    }
 }

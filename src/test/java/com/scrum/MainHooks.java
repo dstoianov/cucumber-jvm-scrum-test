@@ -10,25 +10,26 @@ import java.io.IOException;
 
 /**
  * Cucumber hooks are executed before or after each scenario
+ *
  * @author Andrii.Dzynia
  */
 public class MainHooks {
 
-  @Before
-  public void prepare() {
-  }
-
-  @After
-  public void takeScreenShot(Scenario result) throws IOException {
-    result.embed(getScreenShotBytes(), "image/png");
-  }
-
-  private byte[] getScreenShotBytes() {
-    if(WebDriverSingleton.getInstance() instanceof TakesScreenshot){
-      return ((TakesScreenshot) WebDriverSingleton.getInstance()).getScreenshotAs(OutputType.BYTES);
+    @Before
+    public void prepare() {
     }
-    return new byte[]{};
-  }
+
+    @After
+    public void takeScreenShot(Scenario result) throws IOException {
+        result.embed(getScreenShotBytes(), "image/png");
+    }
+
+    private byte[] getScreenShotBytes() {
+        if (WebDriverSingleton.getInstance() instanceof TakesScreenshot) {
+            return ((TakesScreenshot) WebDriverSingleton.getInstance()).getScreenshotAs(OutputType.BYTES);
+        }
+        return new byte[]{};
+    }
 
 }
 

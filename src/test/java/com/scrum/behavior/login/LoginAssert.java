@@ -1,7 +1,6 @@
 package com.scrum.behavior.login;
 
 import com.scrum.pages.LoginPage;
-import com.scrum.steps.AdminPerson;
 import org.openqa.selenium.By;
 
 import static junit.framework.Assert.assertTrue;
